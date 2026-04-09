@@ -2,7 +2,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
   <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="css/aos.css">
@@ -31,6 +30,8 @@ body {
   font: 17px/28px Georgia;
   margin: 0;
   padding: 0;
+  background-color: #000 !important;
+  color: #e6e6e6;
 }
 
 .section column p{
@@ -38,16 +39,17 @@ body {
 }
 
 a {
-  color: #004276;
+  color: #00d4ff;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #00f0ff;
 }
 
 .article {
-  border-top: solid 1px #000;
+  border-top: solid 1px #444;
 }
 
 .section {
@@ -70,7 +72,7 @@ a:hover {
 }
 
 .section--credits a {
-  color: #444;
+  color: #00d4ff;
 }
 
 .column {
@@ -246,13 +248,13 @@ a:hover {
 
 .video-caption {
   margin-top: 5px;
-  color: #888;
+  color: #ccc;
   padding-bottom: 20px;
 }
 
 .video-source {
   font: 11px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #999;
+  color: #aaa;
   position: absolute;
   bottom: 10px;
   right: 7%;
@@ -260,7 +262,7 @@ a:hover {
 }
 
 .column .video {
-  border: solid 8px #f0f0f0;
+  border: solid 8px #222;
   box-sizing: border-box;
   margin: 40px -10%;
   width: 120%;
@@ -336,15 +338,15 @@ a:hover {
   padding: 0;
   width: 100%;
   height: 100%;
+  text-shadow: none;
 }
 
 .video-caption--head .video-headline {
   position: absolute;
-  top: 10%;
-  color: #000;
+  top: 100px;
+  color: #fff;
   left: 7%;
-  border-bottom: solid 2px black;
- text-shadow: #333;
+  border-bottom: solid 2px #000;
   font-size: 50px;
   line-height: 55px;
   padding-bottom: 35px;
@@ -356,15 +358,14 @@ a:hover {
   bottom: 30%;
   left: 10%;
   width:350px;
-  color: #222;
-  text-shadow: none;
+  color: #000;
 }
 
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) and (min-height: 500px) and (max-height: 800px) {
   .video-caption--head .video-headline {
-    top: 20%;
+    top: 100px;
   }
 
   .video-caption--head .video-summary {
@@ -523,7 +524,7 @@ a:hover {
   /* MAP STUFF FOR MOBILE */
 
   .ios .map-sequence {
-    background-color: white;
+    background-color: #000;
     margin-top: 0px;
     padding-top: 0px !important;
   }
@@ -538,8 +539,8 @@ a:hover {
     font-size: 16px;
     line-height: 26px;
     position: static;
-    color: #000;
-    text-shadow: none;
+    color: #e6e6e6;
+    text-shadow: 0 1px 3px #000;
     max-width: 580px;
     margin-right: auto;
     margin-left: auto;
@@ -988,6 +989,7 @@ await = function() { defers.forEach(function(f) { f(); }); };
   margin-top: 10px;
   text-transform: uppercase;
   font-family: "方正兰亭黑_GBK";
+  color: #fff !important;
 }
 
 .navigation-headline:before {
@@ -1121,12 +1123,38 @@ await = function() { defers.forEach(function(f) { f(); }); };
 li{
     list-style: none;
 }
+
+/* 深色主题表格样式 */
+.table {
+    color: #e6e6e6;
+    background-color: #0a0a0a;
+    border-color: #333;
+}
+
+.table thead th {
+    border-color: #444;
+    background-color: #111;
+    color: #fff;
+}
+
+.table tbody tr:hover {
+    background-color: #1a1a1a;
+}
+
+.table tbody td {
+    border-color: #333;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #1a1a1a;
+}
+
 .header {
             width: 100%;
             box-sizing: border-box;
-            background-color: #ffffff;
+            background-color: #000;
             height: 60px;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid #333;
         }
 
         .navbar {
@@ -1142,13 +1170,13 @@ li{
 
         .bar {
             display: block;
-        
+
             width: 25px;
             height: 3px;
             margin: 5px auto;
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
-            background-color: #101010;
+            background-color: #e6e6e6;
         }
 
         .nav-menu {
@@ -1165,11 +1193,11 @@ li{
         .nav-link {
             font-size: 20px;
             font-weight: 400;
-            color: #475569;
+            color: #00d4ff;
         }
 
         .nav-link:hover {
-            color: #482ff7;
+            color: #00f0ff;
         }
 
         .nav-logo {
@@ -1201,11 +1229,14 @@ li{
             line-height: 10px;
             padding: 10px 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
+            background-color: #000;
+            color: #e6e6e6;
         }
         .ulechart li:first-child{
-            background-color: #ccc;
+            background-color: #333;
             width: 300px;
+            color: #e6e6e6;
         }
         
         }
@@ -1216,18 +1247,18 @@ li{
         left: -100%;
         top: 60px;
         flex-direction: column;
-        background-color: #dbfaff;
+        background-color: #000;
         width: 100%;
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
-       
+
     }
     .llll{
         width: 50px  !important;
     }
     .nav-menu.active {
-        background-color: #fff;
+        background-color: #000;
 
         z-index:100;
         left: 0;
@@ -1290,13 +1321,14 @@ li{
             font-size: 12px;
         }
         }
-        #playBtn {
+    #playBtn {
       position: absolute;
       top: 60px;
       right: 20px;
-      color: #181818;
+      color: #fff;
       z-index: 999;
       font-size: 45px;
+      cursor: pointer;
     }
 
     .back-home {
@@ -1336,9 +1368,120 @@ li{
         height: 36px;
       }
     }
-  </style>
 
-</style>
+    .theme-toggle {
+      display: none;
+    }
+
+    body.theme-night {
+      background: #0f1115;
+      color: #e6e6e6;
+    }
+
+    body.theme-night .article,
+    body.theme-night .section,
+    body.theme-night .column,
+    body.theme-night p,
+    body.theme-night h3,
+    body.theme-night h4,
+    body.theme-night .video-summary {
+      color: #e6e6e6;
+    }
+
+    @media (max-width: 768px) {
+      .theme-toggle {
+        display: none;
+      }
+    }
+
+    /* 移动端自适应 - 完整响应式设置 */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      .column {
+        margin: auto 5%;
+        max-width: 100%;
+      }
+
+      .section {
+        margin-top: 50px;
+      }
+
+      .video-caption--head .video-summary {
+        position: static;
+        width: 100%;
+        color: #000;
+        margin-top: 20px;
+        padding: 0 5%;
+      }
+
+      .video-caption {
+        position: static !important;
+        float: none !important;
+        padding-top: 15px !important;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: auto !important;
+        text-align: left !important;
+      }
+
+      .headline {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .section h3 {
+        font-size: 22px;
+      }
+    }
+
+    /* 视频音量按钮样式 */
+    .video-container {
+      position: relative;
+    }
+
+    .video-mute-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .video-mute-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 0.7);
+      transform: scale(1.1);
+    }
+
+    .video-mute-btn.active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .video-mute-btn {
+        width: 36px;
+        height: 36px;
+        bottom: 8px;
+        right: 8px;
+        font-size: 18px;
+      }
+    }
+  </style>
 <div class="navigation">
   <a class="back-home" href="../DJ.html#project-tuorui" aria-label="返回主页面">←</a>
   <div class="navigation-left">
@@ -1352,14 +1495,13 @@ li{
       <a href="#3" class="navigation-section" title="The Cabbage Strategy">我不是故意的</a>
       <a href="#4" class="navigation-section" title="‘If You Want to Live, Eat’">理解万岁</a>
       <a href="#5" class="navigation-section" title="Threadbare Settlements">妥友采访</a>
-      <a href=""><audio id="audioPlayer" src="audio/music.MP3"></audio></a>
+      <audio id="audioPlayer" src="audio/music.MP3" preload="metadata"></audio>
     
     </div>
    
   </div>
 </div>
 <a href="javascript:;" id="playBtn">♫</a>
-
 
 
 <div class="main">
@@ -1369,8 +1511,8 @@ li{
       
       <div class="video" style="margin-top: -1%;">
         <div class="video-container">
-          <video muted autoplay="autoplay" loop="loop">
-            <source src="video/fengmian.mp4"></source>
+          <video muted autoplay="autoplay" loop="loop" preload="metadata" playsinline webkit-playsinline>
+            <source src="video/fengmian.mp4" type="video/mp4">
           </video>
           <!--[if lte IE 8]><img src="https://static01.nyt.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/mobile-1024/smuggler-tiny-boat.jpg"><![endif]-->
         </div>
@@ -1405,14 +1547,13 @@ li{
     data-aos-offset="120px" data-aos-easing="linear"
     data-aos-duration="1500" aos-anchor-placement="top">
       <em>“我攻击你了，你就不会再靠近我。”</em>
-      <div style="margin: 5%;"><video controls loop style="width: 100%;"><source src="video/guoguo.mp4"></video></div>
+      <div style="margin: 5%;"><video controls loop style="width: 100%;" preload="metadata" playsinline webkit-playsinline><source src="video/guoguo.mp4" type="video/mp4"></video></div>
       <p>控制的念头是和痛苦一起到来的。刘亦果每次想要这么做的时候都会把头别到一边，使劲往上翻眼珠，然后哼哧几下，将身体里翻腾的气流压下去。还有人要跑到没人的角落，拼命抽搐，甚至“手指变成了掰都掰不动的兰花指”。身体失控的时候，刘亦果经常感到有一股力量，从腰部往肩部迅速上窜，让她不停耸肩，抽动脖子，发出类似打嗝的声音。自此以后，她就一直羡慕别人可以端端正正地站着，自己却忍不住抽鼻子、动肩膀，“一副吊儿郎当的样子”。</p> 
     <p>小时候，左邻右舍老是向她家人抱怨，“能不能别让她老跳霹雳舞。”更恼人的是，她会发出“汪汪”的声音，一次，街上的一只小狗回应了她，还有小朋友跑过来问，“你能不能别叫了？”</p>
     <p>为了避免这样的尴尬，13岁那年，刘亦果选择辍学，并在此后两年拒绝出现在大多公众场合。偶尔出门时，她的步子快到让人追不上，讲话也更喜欢一个个“反问”句式。她觉得，这是一种自我保护的行为。</p> 
     </div>
 
-    <script src="./js/jquery-1.12.4.min.js"></script>
-  <script>
+    <script>
     $(".mob-nav").click(function () {
       if ($(this).hasClass('on')) {
         $(this).removeClass('on')
@@ -1422,18 +1563,70 @@ li{
         $('.menu ul').slideDown()
       }
     })
-    var audio = $('#audioPlayer')[0];
 
+    var audio = $('#audioPlayer')[0];
     $('#playBtn').click(function () {
       if (audio.paused) {
         audio.play();
-        $('#playBtn').text('♫');
       } else {
-        audio.pause()
-        audio.currentTime = 0;
-        $('#playBtn').text('▶');
+        audio.pause();
       }
     });
+
+    // 为所有视频添加音量控制按钮
+    function initVideoMuteButtons() {
+      var videos = document.querySelectorAll('.video-container video');
+      videos.forEach(function(video, index) {
+        var container = video.parentElement;
+
+        // 检查是否已经添加过按钮
+        if (container.querySelector('.video-mute-btn')) {
+          return;
+        }
+
+        // 创建音量按钮
+        var btn = document.createElement('button');
+        btn.className = 'video-mute-btn';
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('aria-label', '切换音量');
+
+        // 初始状态：默认静音
+        video.muted = true;
+        btn.innerHTML = '🔇';
+        btn.classList.add('active');
+
+        // 点击按钮切换静音状态
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          video.muted = !video.muted;
+          btn.classList.toggle('active', video.muted);
+          btn.innerHTML = video.muted ? '🔇' : '🔊';
+        });
+
+        // 监听video的muted属性变化
+        var observer = new MutationObserver(function() {
+          btn.classList.toggle('active', video.muted);
+          btn.innerHTML = video.muted ? '🔇' : '🔊';
+        });
+
+        observer.observe(video, { attributes: true, attributeFilter: ['muted'] });
+
+        container.appendChild(btn);
+      });
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+      initVideoMuteButtons();
+    });
+
+    // 如果页面已经加载完成
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initVideoMuteButtons);
+    } else {
+      initVideoMuteButtons();
+    }
   </script>
     <script src="js/aos.js"></script>
       <script>AOS.init()</script>
@@ -1543,8 +1736,8 @@ li{
       data-aos-offset="120px" data-aos-easing="linear"
       data-aos-duration="1500" aos-anchor-placement="top">
         <a class="navigation-marker" id="2"></a>
-        <div class="video-container">  <video muted autoplay="autoplay" loop="loop">
-          <source src="video/zhaoyunqing.mp4"></source>
+        <div class="video-container">  <video muted autoplay="autoplay" loop="loop" preload="metadata" playsinline webkit-playsinline>
+          <source src="video/zhaoyunqing.mp4" type="video/mp4"></source>
         </video></div>
        
         <div class="video-caption" style="width: 400px;"><h1 style="font-family: de;">治疗</h1><b style="font-family: de;">赵云清　妥瑞氏症患者的母亲</b>
@@ -1828,7 +2021,7 @@ li{
       <em>“主流观念认为，妥瑞氏症是一种毛病，通过控制自己，就可以将失控的地方掰回来。”</em>
       <p>事实并非如此，一位考上医学院的病友这样描述“控制自己”的感觉，“我的眼睛紧紧地闭着，有时候能张开一点缝，大多数时候都扭着一片漆黑。我的舌头时而扭曲伸直到极限，时而死死地向喉咙缩，使我不能说话不敢呼吸。”</p>
       <p>这加剧了单纯抽动带来的痛苦。由于患者想要控制自己，疾病本身又难以驯服，让他们总结出五花八门的控制方式，又在逐一尝试后，生出无能无力的念头。最终，挫败感渗入生活的每个方面，致使原本受情绪影响较大的疾病加重，也让患者本人产生强烈的心理对抗，陷入抑郁、焦虑、强迫的恶性循环。</p>
-      <div style="margin-top: 5%;margin-bottom: -10%;"><video controls loop style="width: 100%;"><source src="video/wushangyang.mp4"></video></div>
+      <div style="margin-top: 5%;margin-bottom: -10%;"><video controls loop style="width: 100%;" preload="metadata" playsinline webkit-playsinline><source src="video/wushangyang.mp4" type="video/mp4"></video></div>
     </div> 
 
 
@@ -1907,6 +2100,11 @@ li{
   }
   #wenjuan p{
     font-size:small;
+    color: #000;
+  }
+
+  #wenjuan b {
+    color: #000;
   }
 
   @font-face {
@@ -1954,7 +2152,60 @@ data-aos-duration="1500">
 <script src="js/aos.js"></script>
 <script>AOS.init()</script>
 <script>
-  
+  // 视频加载优化 - 处理网络连接和错误
+  (function() {
+    // 检查网络连接状态
+    function isSlowConnection() {
+      if (navigator.connection) {
+        var speed = navigator.connection.effectiveType;
+        return speed === '2g' || speed === '3g' || speed === '4g-slow';
+      }
+      return false;
+    }
+
+    // 为所有视频添加错误处理
+    document.addEventListener('DOMContentLoaded', function() {
+      var videos = document.querySelectorAll('video');
+      videos.forEach(function(video) {
+        // 检测到错误时的处理
+        video.addEventListener('error', function(e) {
+          console.warn('视频加载失败:', e);
+          // 尝试加载备选源或显示提示
+          var container = video.parentElement;
+          if (!container.querySelector('.video-error-msg')) {
+            var errorMsg = document.createElement('div');
+            errorMsg.className = 'video-error-msg';
+            errorMsg.style.cssText = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: #fff; padding: 20px; border-radius: 8px; z-index: 5;';
+            errorMsg.textContent = '视频加载失败，请检查网络连接或稍后重试';
+            container.appendChild(errorMsg);
+          }
+        });
+
+        // 成功加载元数据
+        video.addEventListener('loadedmetadata', function() {
+          console.log('视频元数据已加载');
+        });
+
+        // 处理慢速网络
+        if (isSlowConnection() && video.preload !== 'none') {
+          video.preload = 'none';
+        }
+      });
+    });
+
+    // 监听网络状态变化
+    if (navigator.connection) {
+      navigator.connection.addEventListener('change', function() {
+        var videos = document.querySelectorAll('video');
+        if (isSlowConnection()) {
+          videos.forEach(function(v) {
+            v.pause();
+          });
+        }
+      });
+    }
+  })();
+
 var mobileImages = [
 
   // SECTION 1 - INTRO
@@ -3270,7 +3521,8 @@ function sequencescrolled() {
   var opacity = Math.max(0, Math.min(1, d3.event.rect.bottom < fadeBottom ? (fadeBottom - d3.event.rect.bottom) / fadeTop
       : d3.event.rect.top < fixTop + fadeTop ? (d3.event.rect.top - fixTop) / fadeTop
       : 1));
-  d3.select("body").style("background", fade(opacity));
+  // 禁用动态背景色变换，统一黑底白字
+  // d3.select("body").style("background", fade(opacity));
   d3.select(this).select("audio").property(muteVolume, 1 - opacity);
 }
 
@@ -3281,7 +3533,8 @@ function sequencestatechanged() {
     sequence.selectAll("video").each(function() { this.preload = "auto"; });
     audio.each(function() { this.play(); });
   } else {
-    d3.select("body").style("background", null);
+    // 禁用动态背景色变换，保持黑色
+    // d3.select("body").style("background", null);
     audio.each(function() { this.pause(); });
   }
 }
