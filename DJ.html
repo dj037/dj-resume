@@ -1725,5 +1725,28 @@ Always respond in the same language the user uses (English or Chinese). Keep res
         }
 
     </script>
+
+    <!-- Particle Portrait System -->
+    <script src="particle-portrait.js"></script>
+    <script>
+        // 当 DOM 加载完成后，初始化粒子人物
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                new ParticlePortrait({
+                    particleSize: 2.5,
+                    particleColor: '#00d4ff',
+                    glowColor: 'rgba(0, 212, 255, 0.2)',
+                    maxDispersion: 150
+                });
+            });
+        } else {
+            new ParticlePortrait({
+                particleSize: 2.5,
+                particleColor: '#00d4ff',
+                glowColor: 'rgba(0, 212, 255, 0.2)',
+                maxDispersion: 150
+            });
+        }
+    </script>
 </body>
 </html>
