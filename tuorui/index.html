@@ -158,37 +158,30 @@
           </div>
         </div>
 
-        <!-- 图表 2 - 认知疗法使用情况 -->
-        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
-          <div class="chart-container" id="chart2"></div>
-          <div style="padding: var(--spacing-lg); text-align: left;">
-            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">认知疗法使用情况</h4>
-            <p style="color: #ffffff; line-height: 1.6;">
-              认知疗法是妥瑞氏症治疗中的重要手段。数据显示，仅有少数患者采用认知疗法进行治疗，大多数患者仍然缺乏系统的心理干预。
-            </p>
+        <!-- 图表 2、3、4 轮播 -->
+        <div class="chart-carousel" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg); align-items: center;">
+          <button id="chartPrev" style="padding: 10px 15px; background: #00d4ff; color: #000; border: none; border-radius: 4px; cursor: pointer; font-size: 1.2rem; justify-self: center;">← 上一个</button>
+          <div class="chart-carousel-container" style="position: relative; grid-column: 1 / -1;">
+            <div class="chart-carousel-item active" style="display: block;">
+              <div class="chart-container" id="chart2"></div>
+              <div style="padding: var(--spacing-lg); text-align: center;">
+                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">认知疗法使用情况</h4>
+              </div>
+            </div>
+            <div class="chart-carousel-item" style="display: none;">
+              <div class="chart-container" id="chart3"></div>
+              <div style="padding: var(--spacing-lg); text-align: center;">
+                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">抽动类型分布</h4>
+              </div>
+            </div>
+            <div class="chart-carousel-item" style="display: none;">
+              <div class="chart-container" id="chart4"></div>
+              <div style="padding: var(--spacing-lg); text-align: center;">
+                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">治疗方式统计</h4>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <!-- 图表 3 - 抽动类型 -->
-        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
-          <div class="chart-container" id="chart3"></div>
-          <div style="padding: var(--spacing-lg); text-align: left;">
-            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">抽动类型分布</h4>
-            <p style="color: #ffffff; line-height: 1.6;">
-              妥瑞氏症患者表现出不同类型的抽动症状。根据统计数据，运动抽动和语音抽动的比例各不相同，其中某些类型的症状更为常见。
-            </p>
-          </div>
-        </div>
-
-        <!-- 图表 4 - 治疗方式 -->
-        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
-          <div class="chart-container" id="chart4"></div>
-          <div style="padding: var(--spacing-lg); text-align: left;">
-            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">治疗方式统计</h4>
-            <p style="color: #ffffff; line-height: 1.6;">
-              患者采用的治疗方式多样，包括中医治疗、西医治疗、偏方秘方、中西结合等。数据反映了当前治疗方式的多元化特点。
-            </p>
-          </div>
+          <button id="chartNext" style="padding: 10px 15px; background: #00d4ff; color: #000; border: none; border-radius: 4px; cursor: pointer; font-size: 1.2rem; justify-self: center;">下一个 →</button>
         </div>
       </div>
 
@@ -411,13 +404,13 @@
       var option1 = {
         title: { subtext: "" },
         tooltip: { trigger: "item", formatter: "{a} <br/>{b} : {c} ({d}%)" },
-        legend: { orient: "vertical", x: "left", data: ["北京", "上海", "广东", "江苏", "浙江"] },
+        legend: { orient: "vertical", x: "left", data: ["北京", "上海", "广东", "江苏", "浙江"], textStyle: { color: '#ffffff' } },
         series: [{
           name: "妥瑞症确诊病例",
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%" } } },
+          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%", color: '#ffffff' } } },
           color: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff'],
           data: [
             { value: 10, name: "北京" },
@@ -438,7 +431,7 @@
       var option2 = {
         title: { subtext: "" },
         tooltip: { trigger: "item", formatter: "{a} <br/>{b} : {c} ({d}%)" },
-        legend: { orient: "vertical", x: "left", data: ["有", "没有"] },
+        legend: { orient: "vertical", x: "left", data: ["有", "没有"], textStyle: { color: '#ffffff' } },
         toolbox: {
           show: true,
           feature: {
@@ -454,7 +447,7 @@
           type: "pie",
           radius: "55%",
           center: ["50%", "60%"],
-          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%" } } },
+          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%", color: '#ffffff' } } },
           color: ['#3caebf','#cf3d8e','#eea47d'],
           data: [
             { value: 3.82, name: "有" },
@@ -471,12 +464,12 @@
       var myChart3 = echarts.init(dom3);
       var option3 = {
         tooltip: { trigger: "axis" },
-        legend: { data: ["抽动类型", "数量"] },
-        xAxis: { type: "category", data: ["15.19%", "9.46%", "12.85%", "12.33%", "50.17%"] },
-        yAxis: [{ type: "value", name: "抽动类型" }, { type: "value", name: "数量", min: 0, max: 100 }],
+        legend: { data: ["抽动类型", "数量"], textStyle: { color: '#ffffff' } },
+        xAxis: { type: "category", data: ["15.19%", "9.46%", "12.85%", "12.33%", "50.17%"], axisLabel: { color: '#ffffff' } },
+        yAxis: [{ type: "value", name: "抽动类型", axisLabel: { color: '#ffffff' } }, { type: "value", name: "数量", min: 0, max: 100, axisLabel: { color: '#ffffff' } }],
         series: [
-          { name: "市场规模", type: "bar", data: [15.19, 9.46, 12.85, 12.33, 50.17], color: '#3caebf' },
-          { name: "增长率", type: "line", yAxisIndex: 1, data: ["-", "9.2", "8.9", "10.9", "6.6"], color: '#cf3d8e' }
+          { name: "市场规模", type: "bar", data: [15.19, 9.46, 12.85, 12.33, 50.17], color: '#3caebf', label: { show: true, color: '#ffffff' } },
+          { name: "增长率", type: "line", yAxisIndex: 1, data: ["-", "9.2", "8.9", "10.9", "6.6"], color: '#cf3d8e', label: { show: true, color: '#ffffff' } }
         ]
       };
       myChart3.setOption(option3);
@@ -488,14 +481,14 @@
       var data = [43.2, 22.1, 61.1, 35.5, 32.9];
       var myChart4 = echarts.init(dom4);
       var option4 = {
-        xAxis: { type: 'category', data: ['中医治疗', '西医治疗', '偏方秘方', '中西结合', '未受治疗'] },
-        yAxis: { type: 'value', axisLabel: { formatter: '{value}%' } },
+        xAxis: { type: 'category', data: ['中医治疗', '西医治疗', '偏方秘方', '中西结合', '未受治疗'], axisLabel: { color: '#ffffff' } },
+        yAxis: { type: 'value', axisLabel: { formatter: '{value}%', color: '#ffffff' } },
         series: [{
           type: 'bar',
           showBackground: true,
           data: data,
           backgroundStyle: { color: 'rgba(180, 180, 180, 0.2)' },
-          label: { show: true, position: 'top', formatter: '{c}%' },
+          label: { show: true, position: 'top', formatter: '{c}%', color: '#ffffff' },
           itemStyle: { color: '#eea47d' }
         }]
       };
@@ -508,6 +501,32 @@
       if (myChart2) myChart2.resize();
       if (myChart3) myChart3.resize();
       if (myChart4) myChart4.resize();
+    });
+
+    // 图表轮播功能
+    var carouselItems = document.querySelectorAll('.chart-carousel-item');
+    var currentIndex = 0;
+
+    function showChartItem(index) {
+      carouselItems.forEach(item => item.style.display = 'none');
+      carouselItems[index].style.display = 'block';
+
+      // 重新调整图表大小以适应容器
+      setTimeout(function() {
+        if (myChart2) myChart2.resize();
+        if (myChart3) myChart3.resize();
+        if (myChart4) myChart4.resize();
+      }, 100);
+    }
+
+    document.getElementById('chartPrev').addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      showChartItem(currentIndex);
+    });
+
+    document.getElementById('chartNext').addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      showChartItem(currentIndex);
     });
   </script>
 </body>

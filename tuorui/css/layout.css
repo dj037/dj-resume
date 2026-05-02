@@ -183,7 +183,7 @@ main {
 /* ===== 音量控制按钮 ===== */
 #playBtn {
   position: fixed;
-  top: 0.75rem;
+  top: 70px;
   right: 1rem;
   z-index: 1300;
   width: 40px;

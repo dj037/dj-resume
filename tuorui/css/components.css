@@ -137,16 +137,16 @@ canvas {
   font-weight: 600;
   color: #ffffff;
   margin-bottom: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  border-right: 3px solid var(--accent);
-  text-align: right;
+  padding-left: var(--spacing-md);
+  border-left: 3px solid var(--accent);
+  text-align: left;
 }
 
 .interview-answer {
   color: #ffffff;
   margin-bottom: var(--spacing-md);
-  padding-right: var(--spacing-md);
-  text-align: right;
+  padding-left: var(--spacing-md);
+  text-align: left;
 }
 
 /* ===== 图表/统计 ===== */
