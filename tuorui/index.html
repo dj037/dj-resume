@@ -159,6 +159,39 @@
             </table>
           </div>
         </div>
+
+        <!-- 图表 2 - 认知疗法使用情况 -->
+        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
+          <div class="chart-container" id="chart2"></div>
+          <div style="padding: var(--spacing-lg); text-align: left;">
+            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">认知疗法使用情况</h4>
+            <p style="color: #ffffff; line-height: 1.6;">
+              认知疗法是妥瑞氏症治疗中的重要手段。数据显示，仅有少数患者采用认知疗法进行治疗，大多数患者仍然缺乏系统的心理干预。
+            </p>
+          </div>
+        </div>
+
+        <!-- 图表 3 - 抽动类型 -->
+        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
+          <div class="chart-container" id="chart3"></div>
+          <div style="padding: var(--spacing-lg); text-align: left;">
+            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">抽动类型分布</h4>
+            <p style="color: #ffffff; line-height: 1.6;">
+              妥瑞氏症患者表现出不同类型的抽动症状。根据统计数据，运动抽动和语音抽动的比例各不相同，其中某些类型的症状更为常见。
+            </p>
+          </div>
+        </div>
+
+        <!-- 图表 4 - 治疗方式 -->
+        <div class="grid--2cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg);">
+          <div class="chart-container" id="chart4"></div>
+          <div style="padding: var(--spacing-lg); text-align: left;">
+            <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">治疗方式统计</h4>
+            <p style="color: #ffffff; line-height: 1.6;">
+              患者采用的治疗方式多样，包括中医治疗、西医治疗、偏方秘方、中西结合等。数据反映了当前治疗方式的多元化特点。
+            </p>
+          </div>
+        </div>
       </div>
 
       <p data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">来自天南海北的妥瑞氏症患者都在寻找隐藏自己的方法。有人一周扎3次针，几年下来，身上布满了上万个针眼，还有人选择植入电极，切除小脑片区，换血，往喉带注入肉毒杆菌……</p>
@@ -491,6 +524,13 @@
       };
       myChart4.setOption(option4);
     }
+
+    // 确保 ECharts 在页面加载后重新适应容器大小
+    window.addEventListener('resize', function() {
+      if (myChart2) myChart2.resize();
+      if (myChart3) myChart3.resize();
+      if (myChart4) myChart4.resize();
+    });
   </script>
 </body>
 </html>
