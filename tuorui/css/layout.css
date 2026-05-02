@@ -125,6 +125,7 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  color: #ffffff;
 }
 
 .navigation-sections {
@@ -138,6 +139,7 @@ main {
   opacity: 0.6;
   transition: opacity 0.25s ease;
   white-space: nowrap;
+  color: #ffffff;
 }
 
 .navigation-section:hover,

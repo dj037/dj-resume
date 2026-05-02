@@ -177,9 +177,13 @@ canvas {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 100%);
   padding: var(--spacing-lg) var(--spacing-md);
   color: #ffffff;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .image-overlay h3,
@@ -190,6 +194,23 @@ canvas {
   color: #ffffff;
   font-size: 1.75rem;
   line-height: 1.2;
+}
+
+.image-overlay p {
+  margin: var(--spacing-sm) 0 0 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.image-overlay strong {
+  display: block;
+  color: #ffffff;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .caption {
