@@ -443,14 +443,24 @@
     if (dom3 && typeof echarts !== 'undefined') {
       var myChart3 = echarts.init(dom3);
       var option3 = {
-        tooltip: { trigger: "axis" },
-        legend: { data: ["抽动类型", "数量"] },
-        xAxis: { type: "category", data: ["15.19%", "9.46%", "12.85%", "12.33%", "50.17"] },
-        yAxis: [{ type: "value", name: "抽动类型" }, { type: "value", name: "数量", min: 0, max: 100 }],
-        series: [
-          { name: "市场规模", type: "bar", data: [116.8, 127.5, 138.9, 154.1, 164.2, 180], color: '#3caebf' },
-          { name: "增长率", type: "line", yAxisIndex: 1, data: ["-", "9.2", "8.9", "10.9", "6.6", "9.6"], color: '#cf3d8e' }
-        ]
+        title: { subtext: "" },
+        tooltip: { trigger: "item", formatter: "{a} <br/>{b} : {c} ({d}%)" },
+        legend: { orient: "vertical", x: "left", data: ["15.19%", "9.46%", "12.85%", "12.33%", "50.17%"] },
+        series: [{
+          name: "抽动类型",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
+          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%" } } },
+          color: ['#3caebf','#cf3d8e','#eea47d','#8dd3c7','#bebada'],
+          data: [
+            { value: 15.19, name: "15.19%" },
+            { value: 9.46, name: "9.46%" },
+            { value: 12.85, name: "12.85%" },
+            { value: 12.33, name: "12.33%" },
+            { value: 50.17, name: "50.17%" }
+          ]
+        }]
       };
       myChart3.setOption(option3);
     }
@@ -458,18 +468,25 @@
     // ECharts 图表 4 - 治疗方式
     var dom4 = document.getElementById("chart4");
     if (dom4 && typeof echarts !== 'undefined') {
-      var data = [0.432, 0.221, 0.611, 0.355, 0.329];
       var myChart4 = echarts.init(dom4);
       var option4 = {
-        xAxis: { type: 'category', data: ['中医治疗', '西医治疗', '偏方秘方', '中西结合', '未受治疗'] },
-        yAxis: { type: 'value', axisLabel: { formatter: '{value}%' } },
+        title: { subtext: "" },
+        tooltip: { trigger: "item", formatter: "{a} <br/>{b} : {c} ({d}%)" },
+        legend: { orient: "vertical", x: "left", data: ["中医治疗", "西医治疗", "偏方秘方", "中西结合", "未受治疗"] },
         series: [{
-          type: 'bar',
-          showBackground: true,
-          data: data.map(d => d * 100),
-          backgroundStyle: { color: 'rgba(180, 180, 180, 0.2)' },
-          label: { show: true, position: 'top', formatter: '{c}%' },
-          itemStyle: { color: '#eea47d' }
+          name: "治疗方式",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
+          itemStyle: { normal: { label: { show: true, formatter: "{b}:{d}%" } } },
+          color: ['#3caebf','#cf3d8e','#eea47d','#8dd3c7','#bebada'],
+          data: [
+            { value: 43.2, name: "中医治疗" },
+            { value: 22.1, name: "西医治疗" },
+            { value: 61.1, name: "偏方秘方" },
+            { value: 35.5, name: "中西结合" },
+            { value: 32.9, name: "未受治疗" }
+          ]
         }]
       };
       myChart4.setOption(option4);
