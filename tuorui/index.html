@@ -18,6 +18,12 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    #section-1, #section-2, #section-3, #section-4, #section-5 {
+      scroll-margin-top: 80px;
+    }
+  </style>
 </head>
 <body>
   <!-- 返回主页按钮 -->
@@ -159,29 +165,23 @@
         </div>
 
         <!-- 图表 2、3、4 轮播 -->
-        <div class="chart-carousel" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); width: 100%; margin-top: var(--spacing-lg); align-items: center;">
-          <button id="chartPrev" style="padding: 10px 15px; background: #00d4ff; color: #000; border: none; border-radius: 4px; cursor: pointer; font-size: 1.2rem; justify-self: center;">← 上一个</button>
-          <div class="chart-carousel-container" style="position: relative; grid-column: 1 / -1;">
+        <div class="chart-carousel" style="position: relative; display: flex; align-items: flex-start; width: 100%; margin-top: var(--spacing-lg);">
+          <button id="chartPrev" style="background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; padding: 10px; line-height: 1; transition: opacity 0.2s; opacity: 0.7; flex-shrink: 0; margin-top: 130px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&lt;</button>
+          <div class="chart-carousel-container" style="position: relative; flex: 1; min-width: 0;">
             <div class="chart-carousel-item active" style="display: block;">
               <div class="chart-container" id="chart2"></div>
-              <div style="padding: var(--spacing-lg); text-align: center;">
-                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">认知疗法使用情况</h4>
-              </div>
+              <p style="text-align: center; color: #999; font-size: 0.8rem; margin-top: 4px;">认知疗法使用情况</p>
             </div>
             <div class="chart-carousel-item" style="display: none;">
               <div class="chart-container" id="chart3"></div>
-              <div style="padding: var(--spacing-lg); text-align: center;">
-                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">抽动类型分布</h4>
-              </div>
+              <p style="text-align: center; color: #999; font-size: 0.8rem; margin-top: 4px;">抽动类型分布</p>
             </div>
             <div class="chart-carousel-item" style="display: none;">
               <div class="chart-container" id="chart4"></div>
-              <div style="padding: var(--spacing-lg); text-align: center;">
-                <h4 style="color: #ffffff; margin-bottom: var(--spacing-md);">治疗方式统计</h4>
-              </div>
+              <p style="text-align: center; color: #999; font-size: 0.8rem; margin-top: 4px;">治疗方式统计</p>
             </div>
           </div>
-          <button id="chartNext" style="padding: 10px 15px; background: #00d4ff; color: #000; border: none; border-radius: 4px; cursor: pointer; font-size: 1.2rem; justify-self: center;">下一个 →</button>
+          <button id="chartNext" style="background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; padding: 10px; line-height: 1; transition: opacity 0.2s; opacity: 0.7; flex-shrink: 0; margin-top: 130px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&gt;</button>
         </div>
       </div>
 
@@ -196,10 +196,10 @@
             <source src="https://res.cloudinary.com/ds2hgfbhj/video/upload/v1775840327/haifuren_zhaoyunqing_uoulsp.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="video-caption">
-          <h3>治疗</h3>
-          <strong>赵云清 妥瑞氏症患者的母亲</strong>
-          <p>"一查这个病，出来的全是广告。混乱的治疗现状催生了悲剧。"
+        <div class="video-caption video-caption--head" style="top: auto; bottom: 0; height: 42%; justify-content: flex-end; padding: var(--spacing-lg); background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 65%, transparent 100%);">
+          <h3 style="color: #fff;">治疗</h3>
+          <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">赵云清 妥瑞氏症患者的母亲</strong>
+          <p style="color: #fff; margin: 0; font-size: 0.9rem; line-height: 1.4;">"一查这个病，出来的全是广告。混乱的治疗现状催生了悲剧。"
           从2009年开始，她就用"海夫人"的笔名撰写相关博文，截止目前，已经分享了近千篇原创文章，还建起了13个QQ群，将1万多名患儿家长和患者聚到一起。</p>
         </div>
       </div>
@@ -279,7 +279,7 @@
     </section>
 
     <!-- 理解万岁详细内容 -->
-    <section class="section column" style="margin-top: -3rem;" data-aos="fade-up">
+    <section class="section column" data-aos="fade-up">
       <p>为了给自己一个交代，2015年蒋云生萌生了拍摄一部展现国内妥瑞氏症患者生存状态的纪录片的想法，并于同年创办了"妥友之家"。</p>
 
       <div class="image">
@@ -307,7 +307,7 @@
     </section>
 
     <!-- 社会倡导 -->
-    <section class="section column" style="margin-top: -3rem;" data-aos="fade-up">
+    <section class="section column" data-aos="fade-up">
       <p>"妥友之家提倡每位妥友都能成为志愿宣传员，但不同的人有不同的选择。"几年下来，蒋云生习惯了大多数妥友想要隐藏的心情，但有时不免无奈，"出门只扫门前雪，难道要让严重的人，这辈子都像这样躲躲藏藏吗？"</p>
       <p>其他人也找到自己和疾病和解的方式。张不凡计划向身边最亲密的10位家人好友坦白自己的病情。
         而蒋云生则计划继续拍摄普及妥瑞氏症的影片。他觉得，永远会有患者从纪录片里获得一些力量。</p>
@@ -315,7 +315,7 @@
     </section>
 
     <!-- 倡导方式 -->
-    <section id="section-5" class="section column" data-aos="fade-up">
+    <section class="section column" data-aos="fade-up">
       <div style="margin-top: -10%; margin-bottom: var(--spacing-lg);">
         <img src="image/huyu.png" alt="倡导呼吁">
       </div>
@@ -339,7 +339,7 @@
     </section>
 
     <!-- 采访部分 -->
-    <section class="section column interview" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1500">
+    <section id="section-5" class="section column interview" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1500">
       <h3 style="text-align: center;">妥友采访</h3>
       <p style="text-align: center;"><strong>董某，今年17岁，北京市海淀区高二学生。</strong></p>
       <p style="text-align: center;"><small>以下信息获得对象许可后进行采访记录，出于保护对患者采取匿名原则。</small></p>

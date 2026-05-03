@@ -82,16 +82,27 @@ function initParallax() {
  * 初始化导航栏部分链接
  */
 function initNavigation() {
-  const sections = document.querySelectorAll('.navigation-section');
+  const navSections = document.querySelector('.navigation-sections');
+  if (!navSections) return;
 
-  sections.forEach(section => {
-    section.addEventListener('click', (e) => {
-      e.preventDefault();
-      // 移除所有活跃状态
-      sections.forEach(s => s.classList.remove('navigation-section--active'));
-      // 添加当前活跃状态
-      section.classList.add('navigation-section--active');
-    });
+  navSections.addEventListener('click', (e) => {
+    const link = e.target.closest('.navigation-section');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+
+    const target = document.getElementById(href.substring(1));
+    if (!target) return;
+
+    e.preventDefault();
+
+    document.querySelectorAll('.navigation-section').forEach(s => s.classList.remove('navigation-section--active'));
+    link.classList.add('navigation-section--active');
+
+    const navHeight = document.querySelector('.navigation')?.offsetHeight || 60;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+    window.scrollTo({ top, behavior: 'smooth' });
   });
 }
 
